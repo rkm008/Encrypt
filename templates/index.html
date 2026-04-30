@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Secure Vault</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="bg"></div>
+
+<div class="card">
+
+<h2>Secure Vault</h2>
+
+<div class="tabs">
+<button id="encBtn" class="active">Encrypt</button>
+<button id="decBtn">Decrypt</button>
+</div>
+
+<!-- ENCRYPT -->
+<div id="encBox" class="box active">
+
+<div class="drop" id="encDrop">Drop or click file</div>
+<input type="file" id="encFile" hidden>
+
+<div class="file-info" id="encInfo"></div>
+
+<input type="text" id="encKey" placeholder="Encryption key 🔐">
+
+<div class="progress"><div id="encBar"></div></div>
+
+<div class="percent" id="encPercent">0%</div>
+
+<button onclick="encryptFile()">Encrypt</button>
+
+<a id="encDownload" class="download">Download</a>
+
+</div>
+
+<!-- DECRYPT -->
+<div id="decBox" class="box">
+
+<div class="drop" id="decDrop">Drop encrypted file</div>
+<input type="file" id="decFile" hidden>
+
+<!-- FIX ADDED HERE -->
+<div class="file-info" id="decInfo"></div>
+
+<input type="text" id="decKey" placeholder="Decryption key 🔓">
+
+<div class="progress"><div id="decBar"></div></div>
+
+<div class="percent" id="decPercent">0%</div>
+
+<button onclick="decryptFile()">Decrypt</button>
+
+<a id="decDownload" class="download">Download</a>
+
+</div>
+
+</div>
+
+<script src="/static/script.js"></script>
+</body>
+</html>
